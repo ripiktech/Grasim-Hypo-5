@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ripik.ai</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Heebo' rel='stylesheet'>
+</head>
+<body>
+  <div class="topnav">
+    <a class="active" style="float: left; padding: 10px 20px; font-size: 25px;">
+      Hypo Dosage Model for Harihar Plant
+    </a>
+    <a class="active" style="float: right; padding: 15px 20px; font-size: 20px; color: rgb(77, 172, 219);">
+      <img class="logo" src="RipikLogoTransparent.png">
+    </a>
+    <a class="active" style="float: right; padding: 15px 20px; font-size: 20px; color: rgb(77, 172, 219);">
+      <img class="logo" src="AdityaBirlaTransparent.png">
+    </a>
+  </div>
+
+  <div class="container" style="width: 95%; justify-content: space-evenly;">
+    <div style="width: 100%;">
+      <div class="card" id="inputInfo">
+        <h1 style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+          Input Form
+        </h1>
+        <form id="inputForm" onsubmit="showInfo(); return false;">
+          <div style="display: inline-flex;"> 
+            <div style="width:100%;">
+              <div class="wrapper">
+                <label>EOP viscosity n-2:</label><br>
+                <input type="number" step=any name="eopViscosity2" id="eopViscosity2" required><br>
+              </div>
+              <div class="wrapper">
+                <label>EOP viscosity n-1:</label><br>
+                <input type="number" step=any name="eopViscosity1" id="eopViscosity1" required><br>
+              </div>
+              <div class="wrapper">
+                <label>Hypo viscosity n-2:</label><br>
+                <input type="number" step=any name="hypoViscosity2" id="hypoViscosity2" required><br>
+              </div>
+              <div class="wrapper">
+                <label>Hypo viscosity n-1:</label><br>
+                <input type="number" step=any name="hypoViscosity1" id="hypoViscosity1" required><br>
+              </div>
+              <div class="wrapper">
+                <label>Hypo addition n-1 (in L/min):</label><br>
+                <input type="number" step=any name="hypoAddition1" id="hypoAddition1" required><br>
+              </div>
+              <div class="wrapper">
+                <label>Secondary Hypo Add n-1 (in L/min):</label><br>
+                <input type="number" step=any name="secondaryHypoAddition1" id="secondaryHypoAddition1" required><br>
+              </div>
+            </div>
+            <div style="width:80%;">
+              <div class="wrapper">
+                <label>Target hypo viscosity(previous):</label><br>
+                <input type="number" step=any name="prevTargetHypo" id="prevTargetHypo" value=500 required><br>
+              </div>
+              <div class="wrapper">
+                <label>Target loose pulp viscosity:</label><br>
+                <input type="number" step=any name="targetLoosePulpViscosity" id="targetLoosePulpViscosity" value=450 required><br>
+              </div>
+            </div>
+          </div>
+          <input type="submit" value="Submit">
+        </form>
+        <h4 style="float:right; padding: 10px; color: #444;">Powered by Ripik.ai for Grasim Pulp and Fibre, Aditya Birla Group.</h4>
+      </div>
+      <div class="card" id="outputInfo">
+        <h1 style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+          Hypo Dosage Prediction Model
+        </h1>
+        <div id="info"></div>
+        <button onclick="resetForm()">Back</button>
+      </div>      
+    </div>
+  </div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
